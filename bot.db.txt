@@ -1,0 +1,18 @@
+/*CREATE TABLE category(
+        category_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name VARCHAR(50) NOT NULL,
+        nick VARCHAR(15) NULL,
+        parent INT DEFAULT NULL
+);*/
+INSERT INTO category VALUES(null,'2o',NULL ,7);
+INSERT INTO category VALUES(null,'1',NULL ,NUll);
+INSERT INTO category VALUES(null,'2',NULL ,NUll);
+INSERT INTO category VALUES(null,'3',NULL ,NUll);
+INSERT INTO category VALUES(null,'4',NULL ,NUll);
+INSERT INTO category VALUES(null,'Ciclos Formativos de Grados Superior','CFGS',NUll);
+INSERT INTO category VALUES(null,'Desenvolupament d’Aplicacions Multiplataforma','DAM',1);
+select * from category;
+SELECT t1.name AS lev1, t2.name as lev2, t3.name as lev3
+FROM category AS t1
+LEFT JOIN category AS t2 ON t2.parent = t1.category_id
+LEFT JOIN category AS t3 ON t3.parent = t2.category_id
