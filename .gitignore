@@ -109,4 +109,3 @@ venv.bak/
 Admin.txt
 Auth.txt
 Users.txt
-*.db
