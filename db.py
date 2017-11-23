@@ -14,10 +14,22 @@ class sql:
                 """
         with self.con()as con:
             cur = con.cursor()
-            cur.execute(query)
+            res = []
+            for row in cur.execute(query):
+                res.append(row)
             cur.close()
             con.commit()
+            return res
 
+    def query_consult(self,query):
+        with self.con()as con:
+            cur = con.cursor()
+            res = []
+            for row in cur.execute(query):
+                res.append(row)
+            cur.close()
+            con.commit()
+            return res
 
     def SQLITE_VERSION(self):
 
